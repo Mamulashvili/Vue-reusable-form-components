@@ -1,4 +1,4 @@
-# Vue-reusable-inputs
+# Vue reusable form components
 Vue reusable components: Input, dropdown, checkboxes
 
 - input: create base-input reusable components with props: 
