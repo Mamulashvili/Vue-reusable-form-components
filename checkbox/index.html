@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Text input</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <base-checkbox
+          :checkboxes="packages"
+          input-name="packages"
+          v-model="selectedPackages"
+        ></base-checkbox>
+        <p class="def-label" v-if="selectedPackages.length > 0">
+          You selected:
+          <span
+            class="def-input"
+            v-for="(selected, index) in selectedPackages"
+            :key="index"
+          >
+            {{ selected }}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- CHECKBOX -->
+    <script type="text/x-template" id="base-checkbox">
+      <ul>
+        <li v-for="item in checkboxes">
+          <input
+            :key="item.id"
+            class="def-checkbox"
+            type="checkbox"
+            :name="inputName"
+            :id="removeWhiteSpaces(item.name)"
+            :value="item.name"
+            v-model="checkVal"
+            v-bind="$attrs"
+          >
+          <label :for="removeWhiteSpaces(item.name)">{{ item.name }}</label>
+         </li>
+      </ul>
+    </script>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
