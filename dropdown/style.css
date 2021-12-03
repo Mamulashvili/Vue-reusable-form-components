@@ -1,0 +1,16 @@
+.wrapper {
+  width: 70%;
+  margin: auto;
+}
+
+.def-input {
+  padding: 10px;
+  border-radius: 7px;
+  min-width: 300px;
+  border: 1px solid #ddd;
+}
+
+.def-label {
+  font-family: sans-serif;
+  margin-right: 15px;
+}
